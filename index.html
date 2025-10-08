@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simpsons Api Project</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body> 
+    <header>
+        <h1 class="header_title">Personajes de los Simpsons</h1>
+        <h2 class="header__subtitle">Aqui encontraras una lista completa de los personajes de la famosa serie!</h2>
+    </header>
+
+    <main>
+        <section class="container-button">
+            <button class="button_loadCharacters" id="load-button">Cargar Personajes</button>
+        </section>
+
+            <section class="loading d-none" id="loading-div">
+                <img class="loading__img" src="/img/loader.svg" alt="loader de carga">
+                <p class="loading__text">Cargando personajes...</p>
+            </section>
+            <section class="error d-none" id="errorMessage">
+                <p class="error__text">Error al cargar los personajes</p>
+            </section>
+
+        <section id="lista-caracteres" class="cardContainer"></section>
+    </main>
+
+    <footer>
+        <a class="footer__link" target="_blank" href="https://thesimpsonsapi.com/#docs">Documentacion de la API
+
+    </footer>
+
+    <script src="/dist/main.js" type="module"></script>
+</body>
+</html>
