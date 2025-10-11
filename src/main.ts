@@ -13,7 +13,7 @@ const urlCaracteres = "https://thesimpsonsapi.com/api/characters";
 const loadingDiv = document.getElementById("loading-div");
 const errorMessage = document.getElementById("errorMessage");
 const cardContainer = document.getElementById("lista-caracteres");
-const loadButton = document.getElementById('load-button');
+const loadButton = document.getElementById("load-button");
 
 const showLoading = (): void => {
   loadingDiv?.classList.remove("d-none");
@@ -42,15 +42,14 @@ const createImage = (character: ICaracter): HTMLImageElement => {
   image.classList.add("card__img");
   image.alt = "Imagen de " + character.name;
   return image;
-}
+};
 
 const createPhrase = (character: ICaracter): HTMLParagraphElement => {
   const phrase = document.createElement("p");
   phrase.textContent = foundShortPhrase(character.phrases);
   phrase.classList.add("card__phrase");
   return phrase;
-
-}
+};
 
 const createCharacterCard = (character: ICaracter): HTMLDivElement => {
   const div = document.createElement("div");
@@ -79,11 +78,10 @@ const renderCharacters = (characters: ICaracter[]): void => {
 };
 
 const fetchCharacters = async (): Promise<void> => {
-    showLoading();
+  showLoading();
   try {
-    await new Promise(resolve => setTimeout(resolve, 600)) //pequeño retraso para ver el spinnner de carga
+    await new Promise((resolve) => setTimeout(resolve, 600)); //pequeño retraso para ver el spinnner de carga
     const res = await fetch(urlCaracteres);
-    hideLoading();
     if (!res.ok) {
       showErrorMessage();
     }
@@ -91,13 +89,14 @@ const fetchCharacters = async (): Promise<void> => {
     renderCharacters(data.results);
     console.log(data.results);
   } catch (error) {
-    hideLoading();
     showErrorMessage();
+  } finally {
+    hideLoading();
   }
 };
 
-document.addEventListener('DOMContentLoaded',() => {
+document.addEventListener("DOMContentLoaded", () => {
   if (loadButton) {
-      loadButton?.addEventListener('click', fetchCharacters)
+    loadButton?.addEventListener("click", fetchCharacters);
   }
-})
+});
