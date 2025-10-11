@@ -59,6 +59,7 @@ main {
 .loading__img {
   background-color: var(--white-transparent);
   border-radius: 50%;
+  box-shadow: 0px 0px 40px lightcoral ;
 }
 .loading__text {
   color: #ffffff;
@@ -148,4 +149,12 @@ footer {
 .footer__link{
   color: black;
   margin: 0 auto;
+}
+
+.card__character:hover{
+  transform: scale(1.1);
+  box-shadow:0px 0px 70px lightgoldenrodyellow;
+  transition: 300ms;
+  background-color: lightgoldenrodyellow;
+  cursor: pointer;
 }
