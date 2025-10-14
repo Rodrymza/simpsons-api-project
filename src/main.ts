@@ -8,7 +8,6 @@ interface ICaracter {
 interface IrespiestaApi {
   results: ICaracter[];
 }
-const urlBase = "https://thesimpsonsapi.com/api/";
 const urlCaracteres = "https://thesimpsonsapi.com/api/characters";
 const loadingDiv = document.getElementById("loading-div");
 const errorMessage = document.getElementById("errorMessage");
